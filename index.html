@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>제주 데이터 길잡이 — 묻고, 찾고, 계산하고, 증명하는 데이터 에이전트</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="logo" aria-hidden="true">제</div>
+  <div>
+    <h1>제주 데이터 길잡이</h1>
+    <p>제주데이터허브 데이터에 <b>질문 한 줄</b>로 묻고, <b>숫자마다 원자료 칸</b>을 보여 드려요.</p>
+  </div>
+  <div class="note-box">분석은 <b>이 PC 안</b>에서만 이루어집니다. 인터넷·AI 키 없이도 동작합니다.</div>
+</header>
+
+<main>
+  <section class="ask card">
+    <label for="q" class="big">무엇이 궁금하세요?</label>
+    <div class="row">
+      <input id="q" type="text" autocomplete="off" placeholder="예) 우도 입장객이 가장 많았던 해는?" aria-label="질문">
+      <button id="go" class="primary" type="button">물어보기</button>
+    </div>
+    <div class="chips" id="examples" role="group" aria-label="예시 질문"></div>
+    <details class="upload">
+      <summary>내 CSV 파일로 물어보기(허브에서 받은 파일 등)</summary>
+      <input type="file" id="file" accept=".csv,text/csv">
+      <p class="note small" id="file-note">파일을 올리면 이 PC 안에서만 읽어 같은 방식으로 계산합니다(서버로 보내지 않아요).</p>
+    </details>
+  </section>
+
+  <section id="result" aria-live="polite">
+    <div class="empty card">
+      <h2>이렇게 쓰세요</h2>
+      <ol>
+        <li>위 칸에 궁금한 것을 우리말로 적고 <b>물어보기</b>를 누르세요.</li>
+        <li>에이전트가 <b>① 맞는 데이터를 찾고 ② 이 질문에 쓸 수 있는지 점검하고 ③ 계산하고 ④ 계산이 맞는지 검증</b>합니다. 어떻게 이해했는지는 답 위에 한 줄로 보여 드려요.</li>
+        <li>답의 숫자는 <b>어느 칸에서 왔는지</b> 표에서 색으로 보여 드려요. 쓸 수 없는 질문은 이유를 대고 정직하게 거절합니다.</li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span id="stat"></span> · 데이터 출처: 제주데이터허브(jejudatahub.net) 공개 데이터 · 사용 AI 모델: 없음(규칙 기반) · 이 앱은 법적·행정 판단을 대신하지 않습니다.
+</footer>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
